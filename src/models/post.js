@@ -13,4 +13,6 @@ const Post = new Schema({
     like : Number
 });
 
-module.exports = mongoose.model('Post',Post);
+
+const post = mongoose.model('post',Post);
+module.exports= post;

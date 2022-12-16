@@ -12,5 +12,44 @@ app.use(bodyParser.json());
 
 
 app.use(express.json());
-app.use('/',post)
+
+app.get("/get",async(req,res)=>{
+    try{
+        //const mario = await post.find({})
+        res.status(201).json({
+            status:"sucsess",
+            data:req.body
+        })
+    }
+    catch(e){
+        res.status(400).json({
+            status:"failed",
+              message:e.message
+        })
+        
+    }
+
+   
+
+})
+
+
+app.post("/post", async(req,res)=>{
+    try{
+        //const mario = await post.create(req.body)
+        res.status(201).json({
+            status:"sucsess",
+            data:req.body
+        })
+
+    }
+    catch(e){
+        res.status(400).json({
+            status:"400 failed",
+              message:e.message
+        })
+    }
+})
+
+
 module.exports = app;
