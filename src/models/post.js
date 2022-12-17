@@ -5,14 +5,9 @@ const Post = new Schema({
     name : String,
     location : String,
     description : String,
-    postImage : {
-        data : Buffer,
-        contentType : String
-    },
+    PostImage : String,
     date : Date,
     like : Number
 });
 
-
-const post = mongoose.model('post',Post);
-module.exports= post;
+module.exports = mongoose.model('Post',Post);
